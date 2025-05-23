@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.CreateCitaRequest;
 import com.example.demo.model.Cita;
 import com.example.demo.service.CitaService;
 
@@ -10,12 +14,17 @@ import com.example.demo.service.CitaService;
 @RequestMapping("/citas")
 public class CitaController {
 
-    private final CitaService service;
-
-
-    public CitaController(CitaService service) {
-        this.service = service;
+        private CitaService citaService;
+    
+        
+        public CitaController(CitaService citaService) {
+            this.citaService = citaService;
     }
 
 
+    @PostMapping
+    public ResponseEntity<Cita> createClass(@RequestBody CreateCitaRequest request) {
+        Cita newClass = citaService.createCita(request);
+        return ResponseEntity.ok(newClass);
+    }
 }
