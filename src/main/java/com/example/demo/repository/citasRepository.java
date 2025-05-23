@@ -5,6 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.example.demo.model.Cita;
 
 
-public interface citasRepository extends MongoRepository<Cita, String> {    
+public interface CitasRepository extends MongoRepository<Cita, String> {
+
+    boolean existsByDateAndTimeSlot(String fecha, String hora);    
 
 }

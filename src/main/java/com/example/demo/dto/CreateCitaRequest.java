@@ -1,16 +1,13 @@
-package com.example.demo.model;
+package com.example.demo.dto;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import com.example.demo.model.Especialidad;
 
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+public class CreateCitaRequest {
 
-public class Cita {
     public String nombre;
     public String cedula;
     public String correo;
