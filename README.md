@@ -38,9 +38,8 @@ public class Cita {
 }
 ```
 
-**JSON de ejemplo**:
 
-```
+
 
 ### Especialidad
 
@@ -58,9 +57,6 @@ public class Especialidad {
 }
 ```
 
-**JSON de ejemplo**:
-
-```
 
 
 ## DTOs
